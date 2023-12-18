@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reflected XSS Challenge</title>
+</head>
+<body>
+    <h1>Welcome to the Reflected XSS Challenge!</h1>
+    <form action="/submit" method="get">
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="name">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
