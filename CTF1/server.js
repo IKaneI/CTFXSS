@@ -4,16 +4,30 @@ const port = 8000;
 
 app.use(express.urlencoded({ extended: true }));
 
+app.use(express.static(__dirname));
+
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
 
-
 app.get('/submit', (req, res) => {
-  const name = req.query.name;
-  res.send(`<input type="text" id="name" name="name" value="${name}">`);
+  let name = req.query.name;
+  let modifiedName = '';
+
+  for (let i = 0; i < name.length; i++) {
+    if (name[i] === '<') {
+      modifiedName += '&lt;';
+    } else if (name[i] === '>') {
+      modifiedName += '&gt;';
+    } else {
+      modifiedName += name[i];
+    }
+  }
+
+  res.send(`<input type="text" id="name" name="name" value="${modifiedName}">`);
 });
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
+
