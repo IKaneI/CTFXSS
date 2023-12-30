@@ -52,7 +52,7 @@ if (flag) {
         <div class="container success">
          <input type="text" id="name" name="name" value="${modifiedName}">
           <br>
-          <p class="flag">PurpleCyber{Y*ay_y:0)u_ma%%de_iX_Xt}</p>
+          <p class="flag">AABUCTF{Y*ay_y:0)u_ma%%de_iX_Xt}</p>
         </div>
       </body>
       </html>
